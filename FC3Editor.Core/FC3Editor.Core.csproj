@@ -100,23 +100,57 @@
     <Compile Include="FC3Editor.Nomad\Wilderness.cs" />
     <Compile Include="FC3Editor.Nomad\WildernessInventory.cs" />
     <Compile Include="FC3Editor.Nomad\WorldImport.cs" />
-    <Compile Include="FC3Editor.Parameters\IParameter.cs" />
-    <Compile Include="FC3Editor.Parameters\IParameterProvider.cs" />
-    <Compile Include="FC3Editor.Parameters\IParameterProviderDynamic.cs" />
-    <Compile Include="FC3Editor.Parameters\ParamBool.cs" />
-    <Compile Include="FC3Editor.Parameters\ParamButton.cs" />
-    <Compile Include="FC3Editor.Parameters\ParamCheckButton.cs" />
-    <Compile Include="FC3Editor.Parameters\ParamEnum.cs" />
-    <Compile Include="FC3Editor.Parameters\ParamEnumAngles.cs" />
-    <Compile Include="FC3Editor.Parameters\ParamEnumBase.cs" />
-    <Compile Include="FC3Editor.Parameters\ParamEnumUIType.cs" />
-    <Compile Include="FC3Editor.Parameters\Parameter.cs" />
-    <Compile Include="FC3Editor.Parameters\ParamFloat.cs" />
-    <Compile Include="FC3Editor.Parameters\ParamPickButton.cs" />
-    <Compile Include="FC3Editor.Parameters\ParamString.cs" />
-    <Compile Include="FC3Editor.Parameters\ParamText.cs" />
-    <Compile Include="FC3Editor.Parameters\ParamVector.cs" />
-    <Compile Include="FC3Editor.Parameters\ParamVectorUIType.cs" />
+    <Compile Include="FC3Editor.Parameters\IParameter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.Parameters\IParameterProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.Parameters\IParameterProviderDynamic.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.Parameters\ParamBool.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.Parameters\ParamButton.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.Parameters\ParamCheckButton.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.Parameters\ParamEnum.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.Parameters\ParamEnumAngles.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.Parameters\ParamEnumBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.Parameters\ParamEnumUIType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.Parameters\Parameter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.Parameters\ParamFloat.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.Parameters\ParamPickButton.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.Parameters\ParamString.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.Parameters\ParamText.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.Parameters\ParamVector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.Parameters\ParamVectorUIType.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="FC3Editor.Properties\Resources.cs" />
     <Compile Include="FC3Editor.Properties\Settings.cs" />
     <Compile Include="FC3Editor.Tools\IContextHelpDynamic.cs" />

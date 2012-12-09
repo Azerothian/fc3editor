@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3F9B9348-EE94-46E7-8754-1859134F9F33}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FC3.Core.UI</RootNamespace>
+    <AssemblyName>FC3.Core.UI</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SandBar">
+      <HintPath>..\binrefs\SandBar.dll</HintPath>
+    </Reference>
+    <Reference Include="SandDock">
+      <HintPath>..\binrefs\SandDock.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ButtonShader.cs" />
+    <Compile Include="CodeDocument.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CodeEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeHelper.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CodeMapViewerDock.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CollectionTreeItem.cs" />
+    <Compile Include="ContextHelpDock.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EditorSettingsDock.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ImportWorldForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IndentedComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IndentedComboboxItemEventArgs.cs" />
+    <Compile Include="InventoryList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="InventoryTree.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LocalizedMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NomadButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NomadCheckButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NomadCodeBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NomadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NomadRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NomadSlider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NomadTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParamCollectionList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParamCollectionSlotList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParamEnumButtons.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParamEnumCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParamEnumList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParametersList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParamNumberSlider.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParamObjectInventoryTree.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParamObjectSelectionList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParamReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParamSlotList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParamSnapshot.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParamSplineList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParamSplineSlotList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParamStringField.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParamTextureList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParamTextureSlotList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParamTimePicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParamVectorEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParamVectorEditValueType.cs" />
+    <Compile Include="ParamWaterPicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PromptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PromptInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PromptInventoryList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SlotItem.cs" />
+    <Compile Include="SplineTreeItem.cs" />
+    <Compile Include="TextureTreeItem.cs" />
+    <Compile Include="ToolParametersDock.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ViewportControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Watermark.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorldLocateInstanceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CodeDocument.resources" />
+    <EmbeddedResource Include="CodeEditor.resources" />
+    <EmbeddedResource Include="CodeHelper.resources" />
+    <EmbeddedResource Include="CodeMapViewerDock.resources" />
+    <EmbeddedResource Include="ContextHelpDock.resources" />
+    <EmbeddedResource Include="EditorSettingsDock.resources" />
+    <EmbeddedResource Include="ImportWorldForm.resources" />
+    <EmbeddedResource Include="IndentedComboBox.resources" />
+    <EmbeddedResource Include="InventoryList.resources" />
+    <EmbeddedResource Include="InventoryTree.resources" />
+    <EmbeddedResource Include="LocalizedMessageBox.resources" />
+    <EmbeddedResource Include="ObjectAdmin.resources" />
+    <EmbeddedResource Include="ParamCollectionList.resources" />
+    <EmbeddedResource Include="ParamEnumButtons.resources" />
+    <EmbeddedResource Include="ParamEnumCombo.resources" />
+    <EmbeddedResource Include="ParamEnumList.resources" />
+    <EmbeddedResource Include="ParametersList.resources" />
+    <EmbeddedResource Include="ParamNumberSlider.resources" />
+    <EmbeddedResource Include="ParamObjectInventoryTree.resources" />
+    <EmbeddedResource Include="ParamObjectSelectionList.resources" />
+    <EmbeddedResource Include="ParamReport.resources" />
+    <EmbeddedResource Include="ParamSlotList.resources" />
+    <EmbeddedResource Include="ParamSnapshot.resources" />
+    <EmbeddedResource Include="ParamSplineList.resources" />
+    <EmbeddedResource Include="ParamStringField.resources" />
+    <EmbeddedResource Include="ParamTextureList.resources" />
+    <EmbeddedResource Include="ParamTimePicker.resources" />
+    <EmbeddedResource Include="ParamVectorEdit.resources" />
+    <EmbeddedResource Include="ParamWaterPicker.resources" />
+    <EmbeddedResource Include="PromptForm.resources" />
+    <EmbeddedResource Include="PromptInventory.resources" />
+    <EmbeddedResource Include="PromptInventoryList.resources" />
+    <EmbeddedResource Include="ToolParametersDock.resources" />
+    <EmbeddedResource Include="ViewportControl.resources" />
+    <EmbeddedResource Include="WorldLocateInstanceForm.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FC3.Core\FC3.Core.csproj">
+      <Project>{3b357d1f-e28e-4570-a2fd-00a8abf44ede}</Project>
+      <Name>FC3.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
