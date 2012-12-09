@@ -9,7 +9,8 @@ namespace FC3.Core.Interfaces
 		void OnInputRelease();
 		bool OnMouseEvent(MouseEvent mouseEvent, MouseEventArgs mouseEventArgs);
 		bool OnKeyEvent(KeyEvent keyEvent, KeyEventArgs keyEventArgs);
-		void OnEditorEvent(uint eventType, IntPtr eventPtr);
+		//TODO: Do we need this?
+		//void OnEditorEvent(uint eventType, IntPtr eventPtr);
 		void Update(float dt);
 	}
 }

@@ -1,5 +1,3 @@
-using FC3Editor.UI;
-using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -11,8 +9,9 @@ using FC3.Core.Maths;
 using FC3.Core.Logic;
 using FC3.Core.Enums;
 using FC3.Core.Components;
+using Microsoft.Win32;
 
-namespace FC3Editor.Nomad
+namespace FC3.Core.Editor
 {
 	internal static class Editor
 	{
@@ -28,7 +27,7 @@ namespace FC3Editor.Nomad
 			get
 			{
 				//TODO: Fix isActive Check
-
+				return true;
 				//return Win32.GetActiveWindow() != IntPtr.Zero && MainForm.Instance != null && Win32.IsWindowEnabled(MainForm.Instance.Handle);
 			}
 		}
@@ -85,7 +84,7 @@ namespace FC3Editor.Nomad
 		}
 		private static void EventCallback(uint eventType, IntPtr eventPtr)
 		{
-			Editor.OnEditorEvent(eventType, eventPtr);
+			//Editor.OnEditorEvent(eventType, eventPtr);
 		}
 		private static void LoadCompletedCallback(bool success)
 		{
@@ -101,108 +100,8 @@ namespace FC3Editor.Nomad
 			//TODO: Need to fix this MainForm EnabledUI
 			//MainForm.Instance.EnableUI(enable);
 		}
-		public static bool GetScreenPointFromWorldPos(Vec3 worldPos, out Vec2 screenPoint)
-		{
-			return Editor.GetScreenPointFromWorldPos(worldPos, out screenPoint, false);
-		}
-		public static bool GetScreenPointFromWorldPos(Vec3 worldPos, out Vec2 screenPoint, bool clipped)
-		{
-			bool flag = Binding.FCE_Editor_GetScreenPointFromWorldPos(worldPos.X, worldPos.Y, worldPos.Z, out screenPoint.X, out screenPoint.Y);
-			if (flag && clipped)
-			{
-				screenPoint.X = Math.Min(Math.Max(0f, screenPoint.X), 1f);
-				screenPoint.Y = Math.Min(Math.Max(0f, screenPoint.Y), 1f);
-			}
-			return flag;
-		}
-		public static void GetWorldRayFromScreenPoint(Vec2 screenPoint, out Vec3 raySrc, out Vec3 rayDir)
-		{
-			Binding.FCE_Editor_GetWorldRayFromScreenPoint(screenPoint.X, screenPoint.Y, out raySrc.X, out raySrc.Y, out raySrc.Z, out rayDir.X, out rayDir.Y, out rayDir.Z);
-		}
-		public static bool RayCastTerrain(Vec3 raySrc, Vec3 rayDir, out Vec3 hitPos, out float hitDist)
-		{
-			return Binding.FCE_Editor_RayCastTerrain(raySrc.X, raySrc.Y, raySrc.Z, rayDir.X, rayDir.Y, rayDir.Z, out hitPos.X, out hitPos.Y, out hitPos.Z, out hitDist);
-		}
-		public static bool RayCastPhysics(Vec3 raySrc, Vec3 rayDir, EditorObject ignore, out Vec3 hitPos, out float hitDist)
-		{
-			Vec3 vec;
-			return Editor.RayCastPhysics(raySrc, rayDir, ignore, out hitPos, out hitDist, out vec);
-		}
-		public static bool RayCastPhysics(Vec3 raySrc, Vec3 rayDir, EditorObject ignore, out Vec3 hitPos, out float hitDist, out Vec3 hitNormal)
-		{
-			return Binding.FCE_Editor_RayCastPhysics(raySrc.X, raySrc.Y, raySrc.Z, rayDir.X, rayDir.Y, rayDir.Z, ignore.Pointer, out hitPos.X, out hitPos.Y, out hitPos.Z, out hitDist, out hitNormal.X, out hitNormal.Y, out hitNormal.Z);
-		}
-		public static bool RayCastPhysics(Vec3 raySrc, Vec3 rayDir, EditorObjectSelection ignore, out Vec3 hitPos, out float hitDist)
-		{
-			Vec3 vec;
-			return Editor.RayCastPhysics(raySrc, rayDir, ignore, out hitPos, out hitDist, out vec);
-		}
-		public static bool RayCastPhysics(Vec3 raySrc, Vec3 rayDir, EditorObjectSelection ignore, out Vec3 hitPos, out float hitDist, out Vec3 hitNormal)
-		{
-			return Binding.FCE_Editor_RayCastPhysics2(raySrc.X, raySrc.Y, raySrc.Z, rayDir.X, rayDir.Y, rayDir.Z, ignore.Pointer, out hitPos.X, out hitPos.Y, out hitPos.Z, out hitDist, out hitNormal.X, out hitNormal.Y, out hitNormal.Z);
-		}
-		public static void EnterIngame(string gameMode)
-		{
-			if (!Binding.FCE_Editor_ValidateIngame())
-			{
 
-				Log.error(Localizer.LocalizeCommon("MSG_DESC_INGAME_INVALID_OBJECTS"));
-
-				//LocalizedMessageBox.Show(MainForm.Instance, , Localizer.Localize("WARNING"), Localizer.Localize("Generic", "GENERIC_OK"), null, null, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
-			}
-
-
-			//TODO: Need to fix this MainForm EnterIngame
-			//MainForm.Instance.EnterIngame();
-			Binding.FCE_Editor_EnterIngame(gameMode);
-		}
-		public static void ExitIngame()
-		{
-			Binding.FCE_Editor_ExitIngame();
-
-
-			//TODO: Need to fix this MainForm ExitIngame
-			//MainForm.Instance.ExitIngame();
-		}
-		public static bool RayCastTerrainFromScreenPoint(Vec2 screenPoint, out Vec3 hitPos)
-		{
-			Vec3 raySrc;
-			Vec3 rayDir;
-			Editor.GetWorldRayFromScreenPoint(screenPoint, out raySrc, out rayDir);
-			float num;
-			return Editor.RayCastTerrain(raySrc, rayDir, out hitPos, out num);
-		}
-		public static bool RayCastTerrainFromMouse(out Vec3 hitPos)
-		{
-			return Editor.RayCastTerrainFromScreenPoint(Viewport.NormalizedMousePos, out hitPos);
-		}
-		public static bool RayCastPhysicsFromScreenPoint(Vec2 screenPoint, out Vec3 hitPos)
-		{
-			Vec3 raySrc;
-			Vec3 rayDir;
-			Editor.GetWorldRayFromScreenPoint(screenPoint, out raySrc, out rayDir);
-			float num;
-			return Editor.RayCastPhysics(raySrc, rayDir, EditorObject.Null, out hitPos, out num);
-		}
-		public static bool RayCastPhysicsFromMouse(out Vec3 hitPos)
-		{
-			return Editor.RayCastPhysicsFromScreenPoint(Editor.Viewport.NormalizedMousePos, out hitPos);
-		}
-		public static void ApplyScreenDeltaToWorldPos(Vec2 screenDelta, ref Vec3 worldPos)
-		{
-			Vec3 vec = Camera.FrontVector;
-			if ((double)Math.Abs(vec.X) < 0.001 && (double)Math.Abs(vec.Y) < 0.001)
-			{
-				vec = Camera.UpVector;
-			}
-			Vec2 vec2 = -vec.XY;
-			vec2.Normalize();
-			Vec2 vec3 = new Vec2(-vec2.Y, vec2.X);
-			float num = (float)((double)Vec3.Dot(worldPos - Camera.Position, Camera.FrontVector) * Math.Tan((double)Camera.HalfFOV) * 2.0);
-			worldPos.X += num * screenDelta.X * vec3.X + num * screenDelta.Y * vec2.X;
-			worldPos.Y += num * screenDelta.X * vec3.Y + num * screenDelta.Y * vec2.Y;
-		}
-		public static void OnMouseEvent(MouseEvent mouseEvent, MouseEventArgs mouseEventArgs)
+		public static void OnMouseEvent(MouseEvent mouseEvent, System.Windows.Forms.MouseEventArgs mouseEventArgs)
 		{
 			foreach (IInputSink current in Editor.GetInputs())
 			{
@@ -212,13 +111,13 @@ namespace FC3Editor.Nomad
 				}
 			}
 		}
-		public static void OnKeyEvent(KeyEvent keyEvent, KeyEventArgs keyEventArgs)
+		public static void OnKeyEvent(KeyEvent keyEvent, System.Windows.Forms.KeyEventArgs keyEventArgs)
 		{
 			if (Editor.IsIngame)
 			{
-				if (keyEvent == KeyEvent.KeyUp && keyEventArgs.KeyCode == Keys.Escape)
+				if (keyEvent == KeyEvent.KeyUp && keyEventArgs.KeyCode == System.Windows.Forms.Keys.Escape)
 				{
-					Editor.ExitIngame();
+				//	Editor.ExitIngame();
 					return;
 				}
 			}
@@ -233,13 +132,15 @@ namespace FC3Editor.Nomad
 				}
 			}
 		}
-		public static void OnEditorEvent(uint eventType, IntPtr eventPtr)
-		{
-			foreach (IInputSink current in Editor.GetInputs())
-			{
-				current.OnEditorEvent(eventType, eventPtr);
-			}
-		}
+
+		//TODO: Do we need this? OnEditorEvent
+		//public static void OnEditorEvent(uint eventType, IntPtr eventPtr)
+		//{
+		//	foreach (IInputSink current in Editor.GetInputs())
+		//	{
+		//		current.OnEditorEvent(eventType, eventPtr);
+		//	}
+		//}
 		public static void OnUpdate(float dt)
 		{
 			foreach (IInputSink current in Editor.GetInputs())
@@ -279,47 +180,6 @@ namespace FC3Editor.Nomad
 			}
 			yield break;
 		}
-		public static RegistryKey GetRegistrySettings()
-		{
-			return Registry.CurrentUser.CreateSubKey("Software\\Ubisoft\\Far Cry 3\\Editor");
-		}
-		public static int GetRegistryInt(string name, int defaultValue)
-		{
-			int registryInt;
-			using (RegistryKey registrySettings = Editor.GetRegistrySettings())
-			{
-				registryInt = Editor.GetRegistryInt(registrySettings, name, defaultValue);
-			}
-			return registryInt;
-		}
-		public static int GetRegistryInt(RegistryKey key, string name, int defaultValue)
-		{
-			object value = key.GetValue(name);
-			if (value is int)
-			{
-				return (int)value;
-			}
-			return defaultValue;
-		}
-		public static string GetRegistryString(RegistryKey key, string name, string defaultValue)
-		{
-			object value = key.GetValue(name);
-			if (value is string)
-			{
-				return (string)value;
-			}
-			return defaultValue;
-		}
-		public static void SetRegistryInt(string name, int value)
-		{
-			using (RegistryKey registrySettings = Editor.GetRegistrySettings())
-			{
-				Editor.SetRegistryInt(registrySettings, name, value);
-			}
-		}
-		public static void SetRegistryInt(RegistryKey key, string name, int value)
-		{
-			key.SetValue(name, value);
-		}
+		
 	}
 }

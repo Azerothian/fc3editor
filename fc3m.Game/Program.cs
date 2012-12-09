@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace fc3m.Game
+namespace fc3m
 {
 	static class Program
 	{
@@ -15,10 +15,7 @@ namespace fc3m.Game
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-
-
-
-			//Application.Run(new mainGame());
+			Application.Run(new fc3mGame());
 		}
 	}
 }

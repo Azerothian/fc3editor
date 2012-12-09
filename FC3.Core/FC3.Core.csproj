@@ -42,6 +42,12 @@
   <ItemGroup>
     <Compile Include="Editor\Editor.cs" />
     <Compile Include="Editor\EditorDocument.cs" />
+    <Compile Include="Enums\QualityLevel.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="Interfaces\IGame.cs" />
+    <Compile Include="NomadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Inventory\CollectionInventoryEntry.cs" />
     <Compile Include="Inventory\InventoryEntry.cs" />
     <Compile Include="Inventory\ObjectInventoryEntry.cs" />
@@ -72,6 +78,8 @@
     </Compile>
     <Compile Include="Engine.cs" />
     <Compile Include="Components\GameModeDash.cs" />
+    <Compile Include="Utils\EditorSettings.cs" />
+    <Compile Include="Utils\EngineUtils.cs" />
     <Compile Include="Utils\GameModeDashNodeParams.cs" />
     <Compile Include="Enums\GameModes.cs" />
     <Compile Include="Components\Gizmo.cs" />
@@ -104,6 +112,8 @@
     <Compile Include="Managers\SplineManager.cs" />
     <Compile Include="Components\SplineRoad.cs" />
     <Compile Include="Components\SplineZone.cs" />
+    <Compile Include="Utils\RayUtils.cs" />
+    <Compile Include="Utils\RegistryUtils.cs" />
     <Compile Include="Utils\StringHash.cs" />
     <Compile Include="Managers\TerrainManager.cs" />
     <Compile Include="Logic\TerrainManipulator.cs" />
@@ -128,9 +138,18 @@
     <Compile Include="Utils\StringUtils.cs" />
     <Compile Include="Utils\Win32.cs" />
     <Compile Include="Utils\XmlHelper.cs" />
+    <Compile Include="ViewportControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="NomadForm.resx">
+      <DependentUpon>NomadForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resources" />
+    <EmbeddedResource Include="ViewportControl.resx">
+      <DependentUpon>ViewportControl.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

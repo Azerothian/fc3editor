@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FC3Editor", "FC3Editor\FC3E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FC3.Core", "FC3.Core\FC3.Core.csproj", "{3B357D1F-E28E-4570-A2FD-00A8ABF44EDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fc3m.Game", "fc3m.Game\fc3m.Game.csproj", "{6E297816-38CC-480A-990E-195B3A90D9BC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fc3m", "fc3m.Game\fc3m.csproj", "{6E297816-38CC-480A-990E-195B3A90D9BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,5 +1,6 @@
 using System;
 using System.Runtime.InteropServices;
+using FC3.Core.Utils;
 namespace FC3.Core
 {
 	internal static class Binding
@@ -975,7 +976,7 @@ namespace FC3.Core
 			Binding.managedDll = "FC3.Core.dll";
 			Binding.LoadIGEDll = null;
 			Binding.UnloadIGEDll = null;
-			if (Program.HasArgument("-dx11"))
+			if (EngineUtils.HasArgument("-dx11"))
 			{
 				Binding.engineDll = Binding.engineDll.Replace(".dll", "_d3d11.dll");
 				Binding.gameDll = Binding.gameDll.Replace(".dll", "_d3d11.dll");

@@ -1,20 +1,18 @@
-using FC3.Core.Nomad;
 using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using FC3.Core;
 using FC3.Core.Utils;
 using FC3.Core.Enums;
 using FC3.Core.Maths;
-using FC3.Core;
 using FC3.Core.Components;
 using FC3.Core.Manager;
-namespace FC3Editor.UI
+namespace FC3.Core
 {
-	internal class ViewportControl : UserControl
+	public class ViewportControl : UserControl
 	{
-
 		private const float kSpeedBoost = 5f;
 		private bool m_blockNextKeyRepeats;
 		private Vec2 m_normalizedMousePos;
@@ -129,9 +127,11 @@ namespace FC3Editor.UI
 			}
 		}
 		public NomadForm MainForm { get; set; }
-		public ViewportControl(Form mainForm)
+		public Game Game { get; set; }
+		public ViewportControl(NomadForm mainForm, Game game)
 		{
 			MainForm = mainForm;
+			Game = game;
 			this.InitializeComponent();
 			this.BackColor = SystemColors.AppWorkspace;
 			base.MouseWheel += new MouseEventHandler(this.ViewportControl_MouseWheel);
@@ -168,7 +168,7 @@ namespace FC3Editor.UI
 			bool flag3 = (msg.LParam.ToInt32() & 1073741824) != 0;
 			Keys keyData = (Keys)(msg.WParam.ToInt32() | (int)Control.ModifierKeys);
 			KeyEventArgs keyEventArgs = new KeyEventArgs(keyData);
-			if (!Editor.IsIngame)
+			if (!Game.IsInGame)
 			{
 				this.UpdateCameraState();
 			}
@@ -178,15 +178,15 @@ namespace FC3Editor.UI
 				{
 					if (!flag3)
 					{
-						Editor.OnKeyEvent(KeyEvent.KeyDown, keyEventArgs);
+						Game.OnKeyEvent(KeyEvent.KeyDown, keyEventArgs);
 					}
-					Editor.OnKeyEvent(KeyEvent.KeyChar, keyEventArgs);
+					Game.OnKeyEvent(KeyEvent.KeyChar, keyEventArgs);
 				}
 				else
 				{
 					if (flag2)
 					{
-						Editor.OnKeyEvent(KeyEvent.KeyUp, keyEventArgs);
+						Game.OnKeyEvent(KeyEvent.KeyUp, keyEventArgs);
 					}
 				}
 			}
@@ -199,7 +199,7 @@ namespace FC3Editor.UI
 				MouseButtons button = e.Button;
 				if (button == MouseButtons.Left)
 				{
-					Editor.OnMouseEvent(MouseEvent.MouseDown, e);
+					Game.OnMouseEvent(MouseEvent.MouseDown, e);
 					return;
 				}
 				if (button != MouseButtons.Right)
@@ -208,7 +208,7 @@ namespace FC3Editor.UI
 					{
 						return;
 					}
-					if (!Editor.IsIngame && this.CameraEnabled)
+					if (!Game.IsInGame && this.CameraEnabled)
 					{
 						this.CameraMode = CameraModes.Panning;
 						return;
@@ -216,7 +216,7 @@ namespace FC3Editor.UI
 				}
 				else
 				{
-					if (!Editor.IsIngame && this.CameraEnabled)
+					if (!Game.IsInGame && this.CameraEnabled)
 					{
 						this.CameraMode = CameraModes.Lookaround;
 					}
@@ -229,7 +229,7 @@ namespace FC3Editor.UI
 			{
 				if (e.Button == MouseButtons.Left)
 				{
-					Editor.OnMouseEvent(MouseEvent.MouseUp, e);
+					Game.OnMouseEvent(MouseEvent.MouseUp, e);
 					return;
 				}
 			}
@@ -245,7 +245,7 @@ namespace FC3Editor.UI
 		{
 			if (this.CaptureMouse)
 			{
-				if (MainForm.IsActive)
+				if (Game.IsActive)
 				{
 					Point position = base.PointToScreen(new Point(base.Width / 2, base.Height / 2));
 					int num = Cursor.Position.X - position.X;
@@ -263,7 +263,7 @@ namespace FC3Editor.UI
 							break;
 
 						default:
-							Editor.OnMouseEvent(MouseEvent.MouseMoveDelta, new MouseEventArgs(e.Button, e.Clicks, num, num2, e.Delta));
+							Game.OnMouseEvent(MouseEvent.MouseMoveDelta, new MouseEventArgs(e.Button, e.Clicks, num, num2, e.Delta));
 							break;
 						}
 						Cursor.Position = position;
@@ -275,12 +275,12 @@ namespace FC3Editor.UI
 			{
 				this.m_normalizedMousePos = new Vec2((float)e.X / (float)base.ClientSize.Width, (float)e.Y / (float)base.ClientSize.Height);
 				ObjectManager.SetViewportPickingPos(this.m_normalizedMousePos);
-				Editor.OnMouseEvent(MouseEvent.MouseMove, e);
+				Game.OnMouseEvent(MouseEvent.MouseMove, e);
 			}
 		}
 		private void ViewportControl_MouseEnter(object sender, EventArgs e)
 		{
-			if (MainForm.IsActive)
+			if (Game.IsActive)
 			{
 				base.Focus();
 			}
@@ -297,7 +297,7 @@ namespace FC3Editor.UI
 		}
 		public void UpdateFocus()
 		{
-			if (MainForm.IsActive)
+			if (Game.IsActive)
 			{
 				if (this.CaptureMouse)
 				{
@@ -322,13 +322,13 @@ namespace FC3Editor.UI
 				this.CameraMode = CameraModes.None;
 			}
 			this.m_mouseOver = false;
-			Editor.OnMouseEvent(MouseEvent.MouseLeave, null);
+			Game.OnMouseEvent(MouseEvent.MouseLeave, null);
 		}
 		private void ViewportControl_MouseWheel(object sender, MouseEventArgs e)
 		{
 			if (!this.m_captureWheel)
 			{
-				if (!Editor.IsIngame)
+				if (!Game.IsInGame)
 				{
 					Camera.Position += Camera.FrontVector * (float)e.Delta * 0.0625f;
 					return;
@@ -336,7 +336,7 @@ namespace FC3Editor.UI
 			}
 			else
 			{
-				Editor.OnMouseEvent(MouseEvent.MouseWheel, e);
+				Game.OnMouseEvent(MouseEvent.MouseWheel, e);
 			}
 		}
 		private void Viewport_Leave(object sender, EventArgs e)

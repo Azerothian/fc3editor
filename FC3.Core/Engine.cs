@@ -162,7 +162,7 @@ namespace FC3.Core
 			}
 			text += language;
 			int num = 1;
-			if (Program.GetMapArgument() != null)
+			if (EngineUtils.GetMapArgument() != null)
 			{
 				num = 2;
 			}

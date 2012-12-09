@@ -75,7 +75,7 @@ namespace FC3.Core.Logic
 				this.m_worldPath = Path.GetDirectoryName(this.m_worldFile);
 				if (this.m_worldFile != null)
 				{
-					using (RegistryKey registrySettings = FC3.Core.Editor. Editor.GetRegistrySettings())
+					using (RegistryKey registrySettings = RegistryUtils.GetRegistrySettings())
 					{
 						registrySettings.SetValue("ImportWorldFile", this.m_worldFile);
 					}
@@ -84,9 +84,9 @@ namespace FC3.Core.Logic
 		}
 		public WorldImport()
 		{
-			using (RegistryKey registrySettings = Editor.GetRegistrySettings())
+			using (RegistryKey registrySettings = RegistryUtils.GetRegistrySettings())
 			{
-				this.WorldFile = Editor.GetRegistryString(registrySettings, "ImportWorldFile", null);
+				this.WorldFile = RegistryUtils.GetRegistryString(registrySettings, "ImportWorldFile", null);
 			}
 		}
 		private void ImportHeightmap(string sourceDir, string targetDir, Rectangle sectorRect, Rectangle sectionRect)

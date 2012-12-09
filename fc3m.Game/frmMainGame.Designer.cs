@@ -1,6 +1,6 @@
-﻿namespace fc3m.Game
+﻿namespace fc3m
 {
-	partial class mainGame
+	partial class frmMainGame
 	{
 		/// <summary>
 		/// Required designer variable.
