@@ -148,7 +148,7 @@ namespace Nomad
 			}
 			return text;
 		}
-		public bool Init(System.Windows.Forms.Form mainWindow, System.Windows.Forms.Control viewport)
+		public bool Init(Game game)
 		{
 			InitInternal();
 			string[] commandLineArgs = Environment.GetCommandLineArgs();
@@ -167,7 +167,7 @@ namespace Nomad
 			{
 				num = 2;
 			}
-			if (!Binding.InitDuniaEngine(Process.GetCurrentProcess().MainModule.BaseAddress, mainWindow.Handle, viewport.Handle, string.Join(" ", commandLineArgs, num, commandLineArgs.Length - num) + text, true, true, m_delegateMessagePumpCallback))
+			if (!Binding.InitDuniaEngine(Process.GetCurrentProcess().MainModule.BaseAddress, game.MainForm.Handle, game.MainForm.Viewport.Handle, string.Join(" ", commandLineArgs, num, commandLineArgs.Length - num) + text, true, true, m_delegateMessagePumpCallback))
 			{
 				return false;
 			}
@@ -180,7 +180,9 @@ namespace Nomad
 			}
 			Binding.FCE_Engine_AutoAcquireInput(true);
 			//Editor.Init(); // TODO:Editor Init ? Hooks?
-			Binding.FCE_Engine_Reset(mainWindow.Handle, viewport.Handle, m_delegateMessagePumpCallback);
+			game.Initialise();
+
+			Binding.FCE_Engine_Reset(game.MainForm.Handle, game.MainForm.Viewport.Handle, m_delegateMessagePumpCallback);
 			if (!Directory.Exists(PersonalPath))
 			{
 				Directory.CreateDirectory(PersonalPath);

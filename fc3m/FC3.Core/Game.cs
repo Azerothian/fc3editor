@@ -164,7 +164,7 @@ namespace Nomad
 					if (!engineRunning)
 					{
 						//	SplashForm.Start();
-						bool flag2 = Engine.Instance.Init(MainForm, Viewport);
+						bool flag2 = Engine.Instance.Init(this);
 						//	SplashForm.Stop();
 						if (!flag2)
 						{
