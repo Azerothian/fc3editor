@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <ProjectGuid>90D76558-26FB-4F46-B13D-C38B62FA3F2C</ProjectGuid>
+    <ProjectGuid>{24BFD217-F381-4DEB-9879-473DAB353BE8}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <OutputType>Library</OutputType>
@@ -158,63 +158,149 @@
     <Compile Include="FC3Editor.Tools\ToolWater.cs" />
     <Compile Include="FC3Editor.UI\ButtonShader.cs" />
     <Compile Include="FC3Editor.UI\CodeDocument.cs" />
-    <Compile Include="FC3Editor.UI\CodeEditor.cs" />
-    <Compile Include="FC3Editor.UI\CodeHelper.cs" />
+    <Compile Include="FC3Editor.UI\CodeEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.UI\CodeHelper.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="FC3Editor.UI\CodeMapViewerDock.cs" />
     <Compile Include="FC3Editor.UI\CollectionTreeItem.cs" />
     <Compile Include="FC3Editor.UI\ContextHelpDock.cs" />
     <Compile Include="FC3Editor.UI\EditorSettingsDock.cs" />
-    <Compile Include="FC3Editor.UI\ImportWorldForm.cs" />
-    <Compile Include="FC3Editor.UI\IndentedComboBox.cs" />
+    <Compile Include="FC3Editor.UI\ImportWorldForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.UI\IndentedComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="FC3Editor.UI\IndentedComboboxItemEventArgs.cs" />
-    <Compile Include="FC3Editor.UI\InventoryList.cs" />
-    <Compile Include="FC3Editor.UI\InventoryTree.cs" />
-    <Compile Include="FC3Editor.UI\LocalizedMessageBox.cs" />
-    <Compile Include="FC3Editor.UI\NomadButton.cs" />
-    <Compile Include="FC3Editor.UI\NomadCheckButton.cs" />
-    <Compile Include="FC3Editor.UI\NomadCodeBox.cs" />
-    <Compile Include="FC3Editor.UI\NomadForm.cs" />
-    <Compile Include="FC3Editor.UI\NomadRadioButton.cs" />
-    <Compile Include="FC3Editor.UI\NomadSlider.cs" />
-    <Compile Include="FC3Editor.UI\NomadTextBox.cs" />
-    <Compile Include="FC3Editor.UI\ObjectAdmin.cs" />
-    <Compile Include="FC3Editor.UI\ParamCollectionList.cs" />
-    <Compile Include="FC3Editor.UI\ParamCollectionSlotList.cs" />
-    <Compile Include="FC3Editor.UI\ParamEnumButtons.cs" />
-    <Compile Include="FC3Editor.UI\ParamEnumCombo.cs" />
-    <Compile Include="FC3Editor.UI\ParamEnumList.cs" />
-    <Compile Include="FC3Editor.UI\ParametersList.cs" />
-    <Compile Include="FC3Editor.UI\ParamNumberSlider.cs" />
-    <Compile Include="FC3Editor.UI\ParamObjectInventoryTree.cs" />
-    <Compile Include="FC3Editor.UI\ParamObjectSelectionList.cs" />
-    <Compile Include="FC3Editor.UI\ParamReport.cs" />
-    <Compile Include="FC3Editor.UI\ParamSlotList.cs" />
-    <Compile Include="FC3Editor.UI\ParamSnapshot.cs" />
-    <Compile Include="FC3Editor.UI\ParamSplineList.cs" />
-    <Compile Include="FC3Editor.UI\ParamSplineSlotList.cs" />
-    <Compile Include="FC3Editor.UI\ParamStringField.cs" />
-    <Compile Include="FC3Editor.UI\ParamTextureList.cs" />
-    <Compile Include="FC3Editor.UI\ParamTextureSlotList.cs" />
-    <Compile Include="FC3Editor.UI\ParamTimePicker.cs" />
-    <Compile Include="FC3Editor.UI\ParamVectorEdit.cs" />
+    <Compile Include="FC3Editor.UI\InventoryList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.UI\InventoryTree.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.UI\LocalizedMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.UI\NomadButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.UI\NomadCheckButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.UI\NomadCodeBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.UI\NomadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.UI\NomadRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.UI\NomadSlider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.UI\NomadTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.UI\ObjectAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.UI\ParamCollectionList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.UI\ParamCollectionSlotList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.UI\ParamEnumButtons.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.UI\ParamEnumCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.UI\ParamEnumList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.UI\ParametersList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.UI\ParamNumberSlider.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.UI\ParamObjectInventoryTree.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.UI\ParamObjectSelectionList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.UI\ParamReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.UI\ParamSlotList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.UI\ParamSnapshot.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.UI\ParamSplineList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.UI\ParamSplineSlotList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.UI\ParamStringField.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.UI\ParamTextureList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.UI\ParamTextureSlotList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.UI\ParamTimePicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.UI\ParamVectorEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="FC3Editor.UI\ParamVectorEditValueType.cs" />
-    <Compile Include="FC3Editor.UI\ParamWaterPicker.cs" />
-    <Compile Include="FC3Editor.UI\PromptForm.cs" />
-    <Compile Include="FC3Editor.UI\PromptInventory.cs" />
-    <Compile Include="FC3Editor.UI\PromptInventoryList.cs" />
+    <Compile Include="FC3Editor.UI\ParamWaterPicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.UI\PromptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.UI\PromptInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.UI\PromptInventoryList.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FC3Editor.UI\SlotItem.cs" />
     <Compile Include="FC3Editor.UI\SplineTreeItem.cs" />
     <Compile Include="FC3Editor.UI\TextureTreeItem.cs" />
     <Compile Include="FC3Editor.UI\ToolParametersDock.cs" />
-    <Compile Include="FC3Editor.UI\ViewportControl.cs" />
-    <Compile Include="FC3Editor.UI\Watermark.cs" />
-    <Compile Include="FC3Editor.UI\WorldLocateInstanceForm.cs" />
+    <Compile Include="FC3Editor.UI\ViewportControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.UI\Watermark.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FC3Editor.UI\WorldLocateInstanceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FC3Editor\ColorUtils.cs" />
     <Compile Include="FC3Editor\FC3EditorLauncher.cs" />
-    <Compile Include="FC3Editor\MainForm.cs" />
+    <Compile Include="FC3Editor\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FC3Editor\MathUtils.cs" />
     <Compile Include="FC3Editor\Program.cs" />
-    <Compile Include="FC3Editor\SplashForm.cs" />
+    <Compile Include="FC3Editor\SplashForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FC3Editor\StringUtils.cs" />
     <Compile Include="FC3Editor\Win32.cs" />
     <Compile Include="FC3Editor\XmlHelper.cs" />
