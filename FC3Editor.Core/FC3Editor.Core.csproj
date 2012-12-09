@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>90D76558-26FB-4F46-B13D-C38B62FA3F2C</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>Library</OutputType>
+    <AssemblyName>FC3Editor.Core</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="SandDock" />
+    <Reference Include="System" />
+    <Reference Include="FC3Editor" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="SandBar" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FC3Editor.Nomad\AABB.cs" />
+    <Compile Include="FC3Editor.Nomad\Axis.cs" />
+    <Compile Include="FC3Editor.Nomad\AxisType.cs" />
+    <Compile Include="FC3Editor.Nomad\Binding.cs" />
+    <Compile Include="FC3Editor.Nomad\BudgetManager.cs" />
+    <Compile Include="FC3Editor.Nomad\Camera.cs" />
+    <Compile Include="FC3Editor.Nomad\CollectionInventory.cs" />
+    <Compile Include="FC3Editor.Nomad\CollectionManager.cs" />
+    <Compile Include="FC3Editor.Nomad\CollectionManipulator.cs" />
+    <Compile Include="FC3Editor.Nomad\CollectionRenderer.cs" />
+    <Compile Include="FC3Editor.Nomad\CoordinateSystem.cs" />
+    <Compile Include="FC3Editor.Nomad\Editor.cs" />
+    <Compile Include="FC3Editor.Nomad\EditorDocument.cs" />
+    <Compile Include="FC3Editor.Nomad\EditorEvent.cs" />
+    <Compile Include="FC3Editor.Nomad\EditorEventUndo.cs" />
+    <Compile Include="FC3Editor.Nomad\EditorObject.cs" />
+    <Compile Include="FC3Editor.Nomad\EditorObjectPivot.cs" />
+    <Compile Include="FC3Editor.Nomad\EditorObjectSelection.cs" />
+    <Compile Include="FC3Editor.Nomad\EditorSettings.cs" />
+    <Compile Include="FC3Editor.Nomad\Engine.cs" />
+    <Compile Include="FC3Editor.Nomad\GameModeDash.cs" />
+    <Compile Include="FC3Editor.Nomad\GameModeDashNodeParams.cs" />
+    <Compile Include="FC3Editor.Nomad\GameModes.cs" />
+    <Compile Include="FC3Editor.Nomad\Gizmo.cs" />
+    <Compile Include="FC3Editor.Nomad\GizmoHelper.cs" />
+    <Compile Include="FC3Editor.Nomad\IInputSink.cs" />
+    <Compile Include="FC3Editor.Nomad\ImageMap.cs" />
+    <Compile Include="FC3Editor.Nomad\ImageMapEngine.cs" />
+    <Compile Include="FC3Editor.Nomad\InputBase.cs" />
+    <Compile Include="FC3Editor.Nomad\Inventory.cs" />
+    <Compile Include="FC3Editor.Nomad\Localizer.cs" />
+    <Compile Include="FC3Editor.Nomad\Navmesh.cs" />
+    <Compile Include="FC3Editor.Nomad\ObjectInventory.cs" />
+    <Compile Include="FC3Editor.Nomad\ObjectLegoBox.cs" />
+    <Compile Include="FC3Editor.Nomad\ObjectManager.cs" />
+    <Compile Include="FC3Editor.Nomad\ObjectRenderer.cs" />
+    <Compile Include="FC3Editor.Nomad\ObjectViewer.cs" />
+    <Compile Include="FC3Editor.Nomad\PaintBrush.cs" />
+    <Compile Include="FC3Editor.Nomad\PhysEntityVector.cs" />
+    <Compile Include="FC3Editor.Nomad\Pivot.cs" />
+    <Compile Include="FC3Editor.Nomad\Plane.cs" />
+    <Compile Include="FC3Editor.Nomad\Points.cs" />
+    <Compile Include="FC3Editor.Nomad\Render.cs" />
+    <Compile Include="FC3Editor.Nomad\RotationDirection.cs" />
+    <Compile Include="FC3Editor.Nomad\Snapshot.cs" />
+    <Compile Include="FC3Editor.Nomad\Spline.cs" />
+    <Compile Include="FC3Editor.Nomad\SplineController.cs" />
+    <Compile Include="FC3Editor.Nomad\SplineInventory.cs" />
+    <Compile Include="FC3Editor.Nomad\SplineManager.cs" />
+    <Compile Include="FC3Editor.Nomad\SplineRoad.cs" />
+    <Compile Include="FC3Editor.Nomad\SplineZone.cs" />
+    <Compile Include="FC3Editor.Nomad\StringHash.cs" />
+    <Compile Include="FC3Editor.Nomad\TerrainManager.cs" />
+    <Compile Include="FC3Editor.Nomad\TerrainManipulator.cs" />
+    <Compile Include="FC3Editor.Nomad\TextureInventory.cs" />
+    <Compile Include="FC3Editor.Nomad\TextureManipulator.cs" />
+    <Compile Include="FC3Editor.Nomad\UndoManager.cs" />
+    <Compile Include="FC3Editor.Nomad\Validation.cs" />
+    <Compile Include="FC3Editor.Nomad\ValidationRecord.cs" />
+    <Compile Include="FC3Editor.Nomad\ValidationReport.cs" />
+    <Compile Include="FC3Editor.Nomad\Vec2.cs" />
+    <Compile Include="FC3Editor.Nomad\Vec3.cs" />
+    <Compile Include="FC3Editor.Nomad\WaterInventory.cs" />
+    <Compile Include="FC3Editor.Nomad\Wilderness.cs" />
+    <Compile Include="FC3Editor.Nomad\WildernessInventory.cs" />
+    <Compile Include="FC3Editor.Nomad\WorldImport.cs" />
+    <Compile Include="FC3Editor.Parameters\IParameter.cs" />
+    <Compile Include="FC3Editor.Parameters\IParameterProvider.cs" />
+    <Compile Include="FC3Editor.Parameters\IParameterProviderDynamic.cs" />
+    <Compile Include="FC3Editor.Parameters\ParamBool.cs" />
+    <Compile Include="FC3Editor.Parameters\ParamButton.cs" />
+    <Compile Include="FC3Editor.Parameters\ParamCheckButton.cs" />
+    <Compile Include="FC3Editor.Parameters\ParamEnum.cs" />
+    <Compile Include="FC3Editor.Parameters\ParamEnumAngles.cs" />
+    <Compile Include="FC3Editor.Parameters\ParamEnumBase.cs" />
+    <Compile Include="FC3Editor.Parameters\ParamEnumUIType.cs" />
+    <Compile Include="FC3Editor.Parameters\Parameter.cs" />
+    <Compile Include="FC3Editor.Parameters\ParamFloat.cs" />
+    <Compile Include="FC3Editor.Parameters\ParamPickButton.cs" />
+    <Compile Include="FC3Editor.Parameters\ParamString.cs" />
+    <Compile Include="FC3Editor.Parameters\ParamText.cs" />
+    <Compile Include="FC3Editor.Parameters\ParamVector.cs" />
+    <Compile Include="FC3Editor.Parameters\ParamVectorUIType.cs" />
+    <Compile Include="FC3Editor.Properties\Resources.cs" />
+    <Compile Include="FC3Editor.Properties\Settings.cs" />
+    <Compile Include="FC3Editor.Tools\IContextHelpDynamic.cs" />
+    <Compile Include="FC3Editor.Tools\ITool.cs" />
+    <Compile Include="FC3Editor.Tools\IToolAction.cs" />
+    <Compile Include="FC3Editor.Tools\IToolBase.cs" />
+    <Compile Include="FC3Editor.Tools\ParamCollection.cs" />
+    <Compile Include="FC3Editor.Tools\ParamObjectAdmin.cs" />
+    <Compile Include="FC3Editor.Tools\ParamRoad.cs" />
+    <Compile Include="FC3Editor.Tools\ParamTexture.cs" />
+    <Compile Include="FC3Editor.Tools\ParamTime.cs" />
+    <Compile Include="FC3Editor.Tools\ParamValidationReport.cs" />
+    <Compile Include="FC3Editor.Tools\ParamWaterMaterial.cs" />
+    <Compile Include="FC3Editor.Tools\ToolCollection.cs" />
+    <Compile Include="FC3Editor.Tools\ToolDash.cs" />
+    <Compile Include="FC3Editor.Tools\ToolEnvironment.cs" />
+    <Compile Include="FC3Editor.Tools\ToolFinalize.cs" />
+    <Compile Include="FC3Editor.Tools\ToolNavmesh.cs" />
+    <Compile Include="FC3Editor.Tools\ToolObject.cs" />
+    <Compile Include="FC3Editor.Tools\ToolPaint.cs" />
+    <Compile Include="FC3Editor.Tools\ToolPaintStrict.cs" />
+    <Compile Include="FC3Editor.Tools\ToolParamSnapshot.cs" />
+    <Compile Include="FC3Editor.Tools\ToolPlayableZone.cs" />
+    <Compile Include="FC3Editor.Tools\ToolProperties.cs" />
+    <Compile Include="FC3Editor.Tools\ToolRoad.cs" />
+    <Compile Include="FC3Editor.Tools\ToolSpline.cs" />
+    <Compile Include="FC3Editor.Tools\ToolTerrainBump.cs" />
+    <Compile Include="FC3Editor.Tools\ToolTerrainErosion.cs" />
+    <Compile Include="FC3Editor.Tools\ToolTerrainFlatten.cs" />
+    <Compile Include="FC3Editor.Tools\ToolTerrainHole.cs" />
+    <Compile Include="FC3Editor.Tools\ToolTerrainNoise.cs" />
+    <Compile Include="FC3Editor.Tools\ToolTerrainRaiseLower.cs" />
+    <Compile Include="FC3Editor.Tools\ToolTerrainRamp.cs" />
+    <Compile Include="FC3Editor.Tools\ToolTerrainSetHeight.cs" />
+    <Compile Include="FC3Editor.Tools\ToolTerrainSmooth.cs" />
+    <Compile Include="FC3Editor.Tools\ToolTerrainTerrace.cs" />
+    <Compile Include="FC3Editor.Tools\ToolTexture.cs" />
+    <Compile Include="FC3Editor.Tools\ToolValidation.cs" />
+    <Compile Include="FC3Editor.Tools\ToolWater.cs" />
+    <Compile Include="FC3Editor.UI\ButtonShader.cs" />
+    <Compile Include="FC3Editor.UI\CodeDocument.cs" />
+    <Compile Include="FC3Editor.UI\CodeEditor.cs" />
+    <Compile Include="FC3Editor.UI\CodeHelper.cs" />
+    <Compile Include="FC3Editor.UI\CodeMapViewerDock.cs" />
+    <Compile Include="FC3Editor.UI\CollectionTreeItem.cs" />
+    <Compile Include="FC3Editor.UI\ContextHelpDock.cs" />
+    <Compile Include="FC3Editor.UI\EditorSettingsDock.cs" />
+    <Compile Include="FC3Editor.UI\ImportWorldForm.cs" />
+    <Compile Include="FC3Editor.UI\IndentedComboBox.cs" />
+    <Compile Include="FC3Editor.UI\IndentedComboboxItemEventArgs.cs" />
+    <Compile Include="FC3Editor.UI\InventoryList.cs" />
+    <Compile Include="FC3Editor.UI\InventoryTree.cs" />
+    <Compile Include="FC3Editor.UI\LocalizedMessageBox.cs" />
+    <Compile Include="FC3Editor.UI\NomadButton.cs" />
+    <Compile Include="FC3Editor.UI\NomadCheckButton.cs" />
+    <Compile Include="FC3Editor.UI\NomadCodeBox.cs" />
+    <Compile Include="FC3Editor.UI\NomadForm.cs" />
+    <Compile Include="FC3Editor.UI\NomadRadioButton.cs" />
+    <Compile Include="FC3Editor.UI\NomadSlider.cs" />
+    <Compile Include="FC3Editor.UI\NomadTextBox.cs" />
+    <Compile Include="FC3Editor.UI\ObjectAdmin.cs" />
+    <Compile Include="FC3Editor.UI\ParamCollectionList.cs" />
+    <Compile Include="FC3Editor.UI\ParamCollectionSlotList.cs" />
+    <Compile Include="FC3Editor.UI\ParamEnumButtons.cs" />
+    <Compile Include="FC3Editor.UI\ParamEnumCombo.cs" />
+    <Compile Include="FC3Editor.UI\ParamEnumList.cs" />
+    <Compile Include="FC3Editor.UI\ParametersList.cs" />
+    <Compile Include="FC3Editor.UI\ParamNumberSlider.cs" />
+    <Compile Include="FC3Editor.UI\ParamObjectInventoryTree.cs" />
+    <Compile Include="FC3Editor.UI\ParamObjectSelectionList.cs" />
+    <Compile Include="FC3Editor.UI\ParamReport.cs" />
+    <Compile Include="FC3Editor.UI\ParamSlotList.cs" />
+    <Compile Include="FC3Editor.UI\ParamSnapshot.cs" />
+    <Compile Include="FC3Editor.UI\ParamSplineList.cs" />
+    <Compile Include="FC3Editor.UI\ParamSplineSlotList.cs" />
+    <Compile Include="FC3Editor.UI\ParamStringField.cs" />
+    <Compile Include="FC3Editor.UI\ParamTextureList.cs" />
+    <Compile Include="FC3Editor.UI\ParamTextureSlotList.cs" />
+    <Compile Include="FC3Editor.UI\ParamTimePicker.cs" />
+    <Compile Include="FC3Editor.UI\ParamVectorEdit.cs" />
+    <Compile Include="FC3Editor.UI\ParamVectorEditValueType.cs" />
+    <Compile Include="FC3Editor.UI\ParamWaterPicker.cs" />
+    <Compile Include="FC3Editor.UI\PromptForm.cs" />
+    <Compile Include="FC3Editor.UI\PromptInventory.cs" />
+    <Compile Include="FC3Editor.UI\PromptInventoryList.cs" />
+    <Compile Include="FC3Editor.UI\SlotItem.cs" />
+    <Compile Include="FC3Editor.UI\SplineTreeItem.cs" />
+    <Compile Include="FC3Editor.UI\TextureTreeItem.cs" />
+    <Compile Include="FC3Editor.UI\ToolParametersDock.cs" />
+    <Compile Include="FC3Editor.UI\ViewportControl.cs" />
+    <Compile Include="FC3Editor.UI\Watermark.cs" />
+    <Compile Include="FC3Editor.UI\WorldLocateInstanceForm.cs" />
+    <Compile Include="FC3Editor\ColorUtils.cs" />
+    <Compile Include="FC3Editor\FC3EditorLauncher.cs" />
+    <Compile Include="FC3Editor\MainForm.cs" />
+    <Compile Include="FC3Editor\MathUtils.cs" />
+    <Compile Include="FC3Editor\Program.cs" />
+    <Compile Include="FC3Editor\SplashForm.cs" />
+    <Compile Include="FC3Editor\StringUtils.cs" />
+    <Compile Include="FC3Editor\Win32.cs" />
+    <Compile Include="FC3Editor\XmlHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FC3Editor.Properties\Resources.resources" />
+    <EmbeddedResource Include="FC3Editor.UI\CodeDocument.resources" />
+    <EmbeddedResource Include="FC3Editor.UI\CodeEditor.resources" />
+    <EmbeddedResource Include="FC3Editor.UI\CodeHelper.resources" />
+    <EmbeddedResource Include="FC3Editor.UI\CodeMapViewerDock.resources" />
+    <EmbeddedResource Include="FC3Editor.UI\ContextHelpDock.resources" />
+    <EmbeddedResource Include="FC3Editor.UI\EditorSettingsDock.resources" />
+    <EmbeddedResource Include="FC3Editor.UI\ImportWorldForm.resources" />
+    <EmbeddedResource Include="FC3Editor.UI\IndentedComboBox.resources" />
+    <EmbeddedResource Include="FC3Editor.UI\InventoryList.resources" />
+    <EmbeddedResource Include="FC3Editor.UI\InventoryTree.resources" />
+    <EmbeddedResource Include="FC3Editor.UI\LocalizedMessageBox.resources" />
+    <EmbeddedResource Include="FC3Editor.UI\ObjectAdmin.resources" />
+    <EmbeddedResource Include="FC3Editor.UI\ParamCollectionList.resources" />
+    <EmbeddedResource Include="FC3Editor.UI\ParamEnumButtons.resources" />
+    <EmbeddedResource Include="FC3Editor.UI\ParamEnumCombo.resources" />
+    <EmbeddedResource Include="FC3Editor.UI\ParamEnumList.resources" />
+    <EmbeddedResource Include="FC3Editor.UI\ParametersList.resources" />
+    <EmbeddedResource Include="FC3Editor.UI\ParamNumberSlider.resources" />
+    <EmbeddedResource Include="FC3Editor.UI\ParamObjectInventoryTree.resources" />
+    <EmbeddedResource Include="FC3Editor.UI\ParamObjectSelectionList.resources" />
+    <EmbeddedResource Include="FC3Editor.UI\ParamReport.resources" />
+    <EmbeddedResource Include="FC3Editor.UI\ParamSlotList.resources" />
+    <EmbeddedResource Include="FC3Editor.UI\ParamSnapshot.resources" />
+    <EmbeddedResource Include="FC3Editor.UI\ParamSplineList.resources" />
+    <EmbeddedResource Include="FC3Editor.UI\ParamStringField.resources" />
+    <EmbeddedResource Include="FC3Editor.UI\ParamTextureList.resources" />
+    <EmbeddedResource Include="FC3Editor.UI\ParamTimePicker.resources" />
+    <EmbeddedResource Include="FC3Editor.UI\ParamVectorEdit.resources" />
+    <EmbeddedResource Include="FC3Editor.UI\ParamWaterPicker.resources" />
+    <EmbeddedResource Include="FC3Editor.UI\PromptForm.resources" />
+    <EmbeddedResource Include="FC3Editor.UI\PromptInventory.resources" />
+    <EmbeddedResource Include="FC3Editor.UI\PromptInventoryList.resources" />
+    <EmbeddedResource Include="FC3Editor.UI\ToolParametersDock.resources" />
+    <EmbeddedResource Include="FC3Editor.UI\ViewportControl.resources" />
+    <EmbeddedResource Include="FC3Editor.UI\WorldLocateInstanceForm.resources" />
+    <EmbeddedResource Include="FC3Editor\Core.dll.licenses" />
+    <EmbeddedResource Include="FC3Editor\MainForm.resources" />
+    <EmbeddedResource Include="FC3Editor\SplashForm.resources" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
