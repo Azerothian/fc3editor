@@ -185,7 +185,7 @@ namespace Nomad
 					}
 
 					//TODO
-					//	Engine.Run();
+					Engine.Instance.Run(true);
 					if (!Engine.Instance.Reloading)
 					{
 						Engine.Instance.Close();

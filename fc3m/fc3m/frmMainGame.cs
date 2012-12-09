@@ -20,7 +20,15 @@ namespace fc3m
 			_game = game;
 			InitializeComponent();
 			_viewPort = new ViewportControl(this, _game);
+
 			this.Controls.Add(_viewPort);
+			this.Load += frmMainGame_Load;
+		}
+
+		void frmMainGame_Load(object sender, EventArgs e)
+		{
+			_viewPort.Height = Height;
+			_viewPort.Width = Width;
 		}
 
 

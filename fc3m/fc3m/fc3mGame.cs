@@ -24,13 +24,14 @@ namespace fc3m
 		public fc3mGame()
 		{
 			_mainForm = new frmMainGame(this);
+			MainForm.Show();
 			OnPostLoad += fc3mGame_OnPostLoad;
 			Run(false, "");
 		}
 
 		void fc3mGame_OnPostLoad(object sender, EventArgs e)
 		{
-			MainForm.Show();
+			
 		}
 	}
 }

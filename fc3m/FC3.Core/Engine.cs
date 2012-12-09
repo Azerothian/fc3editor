@@ -171,13 +171,14 @@ namespace Nomad
 			{
 				return false;
 			}
-			foreach (ProcessModule processModule in Process.GetCurrentProcess().Modules)
-			{
-				if (processModule.ModuleName.StartsWith("Nomad") || processModule.ModuleName.StartsWith("InGameEditor"))
-				{
-					Binding.FCE_Hack_Init(processModule.BaseAddress);
-				}
-			}
+			// TODO:Pretty Slow do we need?
+			//foreach (ProcessModule processModule in Process.GetCurrentProcess().Modules)
+			//{
+			//	if (processModule.ModuleName.StartsWith("Nomad") || processModule.ModuleName.StartsWith("InGameEditor"))
+			//	{
+			//		Binding.FCE_Hack_Init(processModule.BaseAddress);
+			//	}
+			//}
 			Binding.FCE_Engine_AutoAcquireInput(true);
 			//Editor.Init(); // TODO:Editor Init ? Hooks?
 			game.Initialise();

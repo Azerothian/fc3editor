@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nomad", "FC3.Core\Nomad.csproj", "{3B357D1F-E28E-4570-A2FD-00A8ABF44EDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FC3Editor.Core", "fc3m\FC3Editor.Core.csproj", "{6E297816-38CC-480A-990E-195B3A90D9BC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fc3m", "fc3m\fc3m.csproj", "{6E297816-38CC-480A-990E-195B3A90D9BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FC3Editor", "FC3Editor\FC3Editor.csproj", "{8722B331-63E0-4C0C-B0F4-32F09561674B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FC3Launcher", "FC3Editor\FC3Launcher.csproj", "{8722B331-63E0-4C0C-B0F4-32F09561674B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
