@@ -354,6 +354,7 @@
     <Compile Include="FC3Editor\StringUtils.cs" />
     <Compile Include="FC3Editor\Win32.cs" />
     <Compile Include="FC3Editor\XmlHelper.cs" />
+    <Compile Include="IFC3EditorLauncher.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="FC3Editor.Properties\Resources.resources" />
@@ -395,12 +396,6 @@
     <EmbeddedResource Include="FC3Editor\Core.dll.licenses" />
     <EmbeddedResource Include="FC3Editor.Properties\MainForm.resources" />
     <EmbeddedResource Include="FC3Editor.Properties\SplashForm.resources" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\FC3Editor\FC3Editor.csproj">
-      <Project>{c22358f8-e0ca-416f-ad18-ad23504aa78c}</Project>
-      <Name>FC3Editor</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

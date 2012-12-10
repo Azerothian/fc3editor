@@ -4,7 +4,7 @@ using System.IO;
 using System.Reflection;
 namespace FC3Editor
 {
-	internal static class Program
+	public class Program
 	{
 		public static string BinDir
 		{
@@ -71,5 +71,6 @@ namespace FC3Editor
 			FC3EditorLoader fC3EditorLoader2 = new FC3EditorLoader();
 			fC3EditorLoader2.Load(Program.BinDir, engineRunning, mapArgument);
 		}
+		//public static string programGuid = "9de9f6ee-6db7-41bf-a0b4-112e45dd3693";
 	}
 }

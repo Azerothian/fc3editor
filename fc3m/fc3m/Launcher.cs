@@ -4,7 +4,7 @@ using System.Text;
 using Nomad;
 using Nomad.Interfaces;
 
-namespace FC3Editor
+namespace FC3Editor.Core
 {
 	public class FC3EditorLauncher : IFC3EditorLauncher
 	{

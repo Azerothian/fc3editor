@@ -36,11 +36,16 @@
     <Compile Include="FC3Editor.Properties\Resources.cs" />
     <Compile Include="FC3Editor.Properties\Settings.cs" />
     <Compile Include="FC3Editor\FC3EditorLoader.cs" />
-    <Compile Include="FC3Editor\IFC3EditorLauncher.cs" />
     <Compile Include="FC3Editor\Program.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="FC3Editor.Properties\Resources.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FC3Editor.Core\FC3Editor.Core.csproj">
+      <Project>{24bfd217-f381-4deb-9879-473dab353be8}</Project>
+      <Name>FC3Editor.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using Nomad;
 using Nomad.Enums;
 using Nomad.Interfaces;
+using Nomad.Utils;
 
 namespace fc3m
 {
@@ -20,15 +21,22 @@ namespace fc3m
 			_game = game;
 			InitializeComponent();
 			_viewPort = new ViewportControl(this, _game);
-
+			_viewPort.Dock = DockStyle.Fill;
 			this.Controls.Add(_viewPort);
 			this.Load += frmMainGame_Load;
+			
 		}
+
 
 		void frmMainGame_Load(object sender, EventArgs e)
 		{
-			_viewPort.Height = Height;
-			_viewPort.Width = Width;
+
+
+			
+			//EngineUtils.EnterIngame("FCXEditor");
+
+			//_viewPort.Height = Height;
+			//_viewPort.Width = Width;
 		}
 
 

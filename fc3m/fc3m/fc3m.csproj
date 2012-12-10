@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>fc3m</RootNamespace>
-    <AssemblyName>fc3m</AssemblyName>
+    <AssemblyName>FC3Editor.Core</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -36,6 +37,9 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EasyHook">
+      <HintPath>..\binrefs\EasyHook.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -52,10 +56,116 @@
       <DependentUpon>frmMainGame.cs</DependentUpon>
     </Compile>
     <Compile Include="Launcher.cs" />
+    <Compile Include="Nomad\Binding.cs" />
+    <Compile Include="Nomad\Components\Camera.cs" />
+    <Compile Include="Nomad\Components\GameModeDash.cs" />
+    <Compile Include="Nomad\Components\Gizmo.cs" />
+    <Compile Include="Nomad\Components\SplineRoad.cs" />
+    <Compile Include="Nomad\Components\SplineZone.cs" />
+    <Compile Include="Nomad\Editor\Editor.cs" />
+    <Compile Include="Nomad\Editor\EditorDocument.cs" />
+    <Compile Include="Nomad\Editor\EditorObject.cs" />
+    <Compile Include="Nomad\Editor\EditorObjectPivot.cs" />
+    <Compile Include="Nomad\Editor\EditorObjectSelection.cs" />
+    <Compile Include="Nomad\Engine.cs" />
+    <Compile Include="Nomad\Enums\CameraModes.cs" />
+    <Compile Include="Nomad\Enums\GameModes.cs" />
+    <Compile Include="Nomad\Enums\InputEvents.cs" />
+    <Compile Include="Nomad\Enums\QualityLevel.cs" />
+    <Compile Include="Nomad\Enums\ReloadState.cs" />
+    <Compile Include="Nomad\Enums\RotationDirection.cs" />
+    <Compile Include="Nomad\Game.cs" />
+    <Compile Include="Nomad\Interfaces\IFC3EditorLauncher.cs" />
+    <Compile Include="Nomad\Interfaces\IGame.cs" />
+    <Compile Include="Nomad\Interfaces\IInputSink.cs" />
+    <Compile Include="Nomad\Inventory\CollectionInventory.cs" />
+    <Compile Include="Nomad\Inventory\CollectionInventoryEntry.cs" />
+    <Compile Include="Nomad\Inventory\Inventory.cs" />
+    <Compile Include="Nomad\Inventory\InventoryEntry.cs" />
+    <Compile Include="Nomad\Inventory\ObjectInventory.cs" />
+    <Compile Include="Nomad\Inventory\ObjectInventoryEntry.cs" />
+    <Compile Include="Nomad\Inventory\SplineInventory.cs" />
+    <Compile Include="Nomad\Inventory\SplineInventoryEntry.cs" />
+    <Compile Include="Nomad\Inventory\TextureInventory.cs" />
+    <Compile Include="Nomad\Inventory\TextureInventoryEntry.cs" />
+    <Compile Include="Nomad\Inventory\WaterInventory.cs" />
+    <Compile Include="Nomad\Inventory\WaterInventoryEntry.cs" />
+    <Compile Include="Nomad\Inventory\WildernessInventory.cs" />
+    <Compile Include="Nomad\Inventory\WildernessInventoryEntry.cs" />
+    <Compile Include="Nomad\Logic\CollectionManipulator.cs" />
+    <Compile Include="Nomad\Logic\CoordinateSystem.cs" />
+    <Compile Include="Nomad\Logic\ImageMap.cs" />
+    <Compile Include="Nomad\Logic\ImageMapEngine.cs" />
+    <Compile Include="Nomad\Logic\Localizer.cs" />
+    <Compile Include="Nomad\Logic\Navmesh.cs" />
+    <Compile Include="Nomad\Logic\ObjectLegoBox.cs" />
+    <Compile Include="Nomad\Logic\ObjectViewer.cs" />
+    <Compile Include="Nomad\Logic\PaintBrush.cs" />
+    <Compile Include="Nomad\Logic\Snapshot.cs" />
+    <Compile Include="Nomad\Logic\SplineController.cs" />
+    <Compile Include="Nomad\Logic\TerrainManipulator.cs" />
+    <Compile Include="Nomad\Logic\TextureManipulator.cs" />
+    <Compile Include="Nomad\Logic\Validation.cs" />
+    <Compile Include="Nomad\Logic\ValidationRecord.cs" />
+    <Compile Include="Nomad\Logic\ValidationReport.cs" />
+    <Compile Include="Nomad\Logic\Wilderness.cs" />
+    <Compile Include="Nomad\Logic\WorldImport.cs" />
+    <Compile Include="Nomad\Managers\BudgetManager.cs" />
+    <Compile Include="Nomad\Managers\CollectionManager.cs" />
+    <Compile Include="Nomad\Managers\ObjectManager.cs" />
+    <Compile Include="Nomad\Managers\SplineManager.cs" />
+    <Compile Include="Nomad\Managers\TerrainManager.cs" />
+    <Compile Include="Nomad\Managers\UndoManager.cs" />
+    <Compile Include="Nomad\Maths\AABB.cs" />
+    <Compile Include="Nomad\Maths\Axis.cs" />
+    <Compile Include="Nomad\Maths\AxisType.cs" />
+    <Compile Include="Nomad\Maths\PhysEntityVector.cs" />
+    <Compile Include="Nomad\Maths\Pivot.cs" />
+    <Compile Include="Nomad\Maths\Plane.cs" />
+    <Compile Include="Nomad\Maths\Points.cs" />
+    <Compile Include="Nomad\Maths\Spline.cs" />
+    <Compile Include="Nomad\Maths\Vec2.cs" />
+    <Compile Include="Nomad\Maths\Vec3.cs" />
+    <Compile Include="Nomad\NomadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nomad\Renderers\CollectionRenderer.cs" />
+    <Compile Include="Nomad\Renderers\ObjectRenderer.cs" />
+    <Compile Include="Nomad\Renderers\Render.cs" />
+    <Compile Include="Nomad\Resources.cs" />
+    <Compile Include="Nomad\Settings.cs" />
+    <Compile Include="Nomad\Utils\ColorUtils.cs" />
+    <Compile Include="Nomad\Utils\EditorSettings.cs" />
+    <Compile Include="Nomad\Utils\EngineUtils.cs" />
+    <Compile Include="Nomad\Utils\GameModeDashNodeParams.cs" />
+    <Compile Include="Nomad\Utils\GizmoHelper.cs" />
+    <Compile Include="Nomad\Utils\InputBase.cs" />
+    <Compile Include="Nomad\Utils\Log.cs" />
+    <Compile Include="Nomad\Utils\RayUtils.cs" />
+    <Compile Include="Nomad\Utils\RegistryUtils.cs" />
+    <Compile Include="Nomad\Utils\StringHash.cs" />
+    <Compile Include="Nomad\Utils\StringUtils.cs" />
+    <Compile Include="Nomad\Utils\Win32.cs" />
+    <Compile Include="Nomad\Utils\XmlHelper.cs" />
+    <Compile Include="Nomad\ViewportControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="EasyHook64.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="EasyHook64Svc.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="frmMainGame.resx">
       <DependentUpon>frmMainGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nomad\NomadForm.resx">
+      <DependentUpon>NomadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nomad\ViewportControl.resx">
+      <DependentUpon>ViewportControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -68,6 +178,13 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
+    <Content Include="EasyHook32Drv.sys">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="EasyHook64.lib" />
+    <None Include="EasyHook64Drv.sys">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -79,10 +196,20 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FC3.Core\Nomad.csproj">
-      <Project>{3b357d1f-e28e-4570-a2fd-00a8abf44ede}</Project>
-      <Name>Nomad</Name>
+    <ProjectReference Include="..\FC3Editor\FC3Launcher.csproj">
+      <Project>{8722b331-63e0-4c0c-b0f4-32f09561674b}</Project>
+      <Name>FC3Launcher</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EasyHook32.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="EasyHook32Svc.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ProcessMonitor.exe" />
+    <Content Include="ProcMonInject.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

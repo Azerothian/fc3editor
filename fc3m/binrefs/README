@@ -1,0 +1,104 @@
+*********************************************************************************************
+******************************************************* 1) License information
+*********************************************************************************************
+
+EasyHook - The reinvention of Windows API hooking
+ 
+    Copyright (C) 2008 Christoph Husse
+
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 2.1 of the License, or (at your option) any later version.
+
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public
+    License along with this library; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+
+    Please visit http://www.codeplex.com/easyhook for more information
+    about the project and latest updates.
+
+PLEASE NOTE:
+    The LGPL allows you to sell propritary software based on this library
+    (EasyHook) without releasing the source code for your application.
+    This is a big difference to the original GPL. Refer to the attached
+    "LICENSE" document for more information about the LGPL!
+ 
+    To wrap it up (without warranty):
+        
+        1)  You are granted to sell any software that uses EasyHook over
+            DLL or NET bindings. This is covered by the native API and the 
+            managed interface.
+        2)  You are NOT granted to sell any software that includes parts
+            of the EasyHook source code or any modification! If you want
+            to modify EasyHook, you are forced to release your work under
+            the LGPL or GPL... Of course this only applies to the library
+            itself. For example you could release a modification of EasyHook
+            under LGPL, while still being able to release software, which
+            takes advantage of this modification over DLL or NET bindings,
+            under a proprietary license!
+        3)  You shall include a visible hint in your software that EasyHook
+            is used as module and also point out, that this module in
+            particular is released under the terms of the LGPL and NOT
+            under the terms of your software (assuming that your software
+            has another license than LGPL or GPL).
+ 
+    I decided to release EasyHook under LGPL to prevent commercial abuse
+    of this free work. I didn't release it under GPL, because I also want to
+    address commercial vendors which are more common under Windows.
+
+BUG REPORTS:
+
+    Reporting bugs is the only chance to get them fixed! Don't consider your
+    report useless... I will fix any serious bug within a short time! Bugs with
+    lower priority will always be fixed in the next release...
+
+DONATIONS:
+
+    I want to add support for Itanium (II - III) processors. If you have any hardware
+    that you don't need anymore or could donate, which >supports< a recent Windows
+    Itanium edition (Windows license is not required), please contact me. Of course we 
+    could discuss a reasonable sponsorship reference for your company. Money for
+    buying such hardware is also appreciated...
+
+*********************************************************************************************
+***************************************************** 2) How to compile
+*********************************************************************************************
+
+Since EasyHook 2.5, compilation is dramatically simplified. Just compile once
+for "x64" and once for "x86". The native EasyHook DLLs will automatically be
+copied into their counterpart arch directory. 
+
+The you will have to copy the following files into any desired "Deploy" directory:
+
+"Debug\x64\EasyHook64.dll" -> "Deploy\EasyHook64.dll"
+"Debug\x64\EasyHook64Svc.dll" -> "Deploy\EasyHook64Svc.dll"
+"Debug\x86\EasyHook32.dll" -> "Deploy\EasyHook32.dll"
+"Debug\x86\EasyHook32Svc.dll" -> "Deploy\EasyHook32Svc.dll"
+"Debug\x64\EasyHook.dll" -> "Deploy\EasyHook.dll"
+"Debug\x64\EasyHook.dll.xml" -> "Deploy\EasyHook.dll.xml"
+"Debug\x86\EasyHook32Drv.sys" -> "Deploy\EasyHook32Drv.sys"
+"Debug\x64\EasyHook64Drv.sys" -> "Deploy\EasyHook64Drv.sys"
+
+
+Of course this is not necessary for testing purposes. As long as you keep
+all test applications in either the "x86" or "x64" directory, they will
+run properly. The "Deploy" directory is meant to contain all files necessary
+to ship an application based on EasyHook. This is what you get with the
+"Binaries Only" package.
+
+
+*********************************************************************************************
+***************************************************** 3) Prerequisites
+*********************************************************************************************
+
+Since the CRT is now statically compiled into the DEBUG version, you won't
+need the Visual Studio Redistributable package anymore. The RELEASE version
+will compile without CRT, which heavily reduces the resulting binary size!
+For testing purposes I would always recommend to use the DEBUG version...
+
